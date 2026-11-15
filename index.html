@@ -83,11 +83,11 @@
       linear-gradient(to right, rgb(8 9 12 / .88) 0%, rgb(8 9 12 / .7) 30%, rgb(8 9 12 / .26) 58%, transparent 76%),
       linear-gradient(to bottom, rgb(8 9 12 / .5) 0%, transparent 20%, transparent 76%, rgb(8 9 12 / .62) 100%); }
   .hero__copy { left: var(--v-gutter); right: auto; top: auto; bottom: clamp(3rem, 8vh, 5.5rem);
-    max-width: min(42rem, 82vw); display: grid; grid-template-columns: 100%; text-align: left; }
+    max-width: min(52rem, 88vw); display: grid; grid-template-columns: 100%; text-align: left; }
   /* две реплики в одном кадре: первая держится, вторая входит с 0.58 и уводит в услуги */
   .hero__panel { grid-area: 1 / 1; align-self: end; }
   .hero__label { display: block; margin-bottom: var(--v-5); color: var(--v-accent-deep); }
-  .hero h1 { font-size: clamp(1.65rem, 1rem + 1.9vw, 2.7rem); line-height: 1.12; max-width: 26ch; letter-spacing: -0.022em; }
+  .hero h1 { font-size: clamp(2.2rem, 1.2rem + 3.6vw, 5.4rem); line-height: 1.03; max-width: 24ch; letter-spacing: -0.03em; }
   .hero__lede { margin-top: var(--v-5); font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.12rem); line-height: 1.5; color: var(--v-ink); max-width: 44ch; }
   .hero__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: var(--v-3) var(--v-5); margin-top: var(--v-5); }
   .hero__tel { text-decoration: none; color: var(--v-ink); font-size: var(--v-t-sm); display: inline-flex; align-items: center; min-height: 44px; gap: .4em; }
@@ -104,7 +104,7 @@
     .hero__back img { object-position: 62% 82%; }
     .hero__copy { left: var(--v-gutter); right: var(--v-gutter); top: clamp(5rem, 12vh, 6.5rem); bottom: auto; max-width: none; }
     .hero__panel { align-self: start; }
-    .hero h1 { font-size: clamp(1.6rem, 1.05rem + 2.4vw, 2.2rem); max-width: none; }
+    .hero h1 { font-size: clamp(1.8rem, 1.1rem + 3vw, 2.6rem); max-width: none; }
     .hero__lede { font-size: var(--v-t-base); margin-top: var(--v-3); }
     .hero__cta { margin-top: var(--v-4); gap: var(--v-2) var(--v-4); }
     .hero__facts { flex-direction: column; align-items: flex-start; gap: var(--v-1); margin-top: var(--v-4); padding-top: var(--v-4); text-align: left; }
@@ -115,10 +115,10 @@
   .usl__head .v-label { grid-column: 1 / -1; display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
   .usl__head h2 { max-width: 22ch; }
   .usl__head p { color: var(--v-ink-soft); max-width: 46ch; text-wrap: pretty; }
-  .usl__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--v-4); align-items: start; }
+  .usl__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--v-4); }
   .u { grid-column: span 4; display: grid; grid-template-rows: auto 1fr; border-radius: var(--v-radius); overflow: hidden;
     background: var(--v-surface); box-shadow: var(--v-e1); transition: box-shadow .4s var(--v-ease-out), outline-color .3s; outline: 1px solid transparent; }
-  .u--wl { grid-column: span 7; } .u--ws { grid-column: span 5; } .u--wh { grid-column: span 6; }
+  .u--wl, .u--ws, .u--wh { grid-column: span 6; }
   .u__fig { aspect-ratio: 3 / 2; overflow: hidden; margin: 0; }
   .u__fig img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--v-ease-out); }
   @media (hover: hover) and (pointer: fine) { .u:hover { box-shadow: var(--v-e2); outline-color: rgb(194 160 106 / .45); } .u:hover .u__fig img { transform: scale(1.05); } }
@@ -226,9 +226,11 @@
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x; }
   .reviews__stars--sm { --size: .8rem; vertical-align: middle; }
-  .reviews__list { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: var(--v-6); align-items: start; }
-  .reviews__item { padding-top: var(--v-5); border-top: 1px solid var(--v-hair); }
-  .reviews__item--big .reviews__text { font-family: var(--v-font-display); font-size: var(--v-t-lg); line-height: 1.42; }
+  .reviews__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-6); align-items: stretch; }
+  /* три отзыва одной высоты: подпись с именем прижата к низу карточки */
+  .reviews__item { padding-top: var(--v-5); border-top: 1px solid var(--v-hair); display: flex; flex-direction: column; }
+  .reviews__item .reviews__meta { margin-top: auto; padding-top: var(--v-4); }
+  .reviews__item--big .reviews__text { font-family: inherit; font-size: inherit; line-height: inherit; }
   .reviews__text { text-wrap: pretty; }
   .reviews__meta { margin-top: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
   .reviews__meta b { color: var(--v-ink); font-weight: 500; }
@@ -324,7 +326,6 @@
           <div class="hero__panel hero__panel--1" data-v-cue="0 0.52 0 0.12" data-v-rise="0">
             <span class="v-label hero__label">Стоматология · Санкт-Петербург</span>
             <h1 class="v-display v-display--xl" data-v-kinetic="lines">Стоматология у Фонтанки: смета на год вперёд</h1>
-            <p class="hero__lede">План лечения письменно: что делаем, в каком порядке и сколько стоит за год. Гарантия в договоре, взрослым и детям.</p>
             <div class="hero__cta">
               <a class="v-btn" href="#zapis">Записаться</a>
               <a class="hero__tel" href="tel:+78126401240">или позвоните <b>+7 (812) 640-12-40</b></a>
