@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Фонтанка · стоматология в Санкт-Петербурге</title>
+<meta name="description" content="Стоматология «Фонтанка»: план лечения и смета на год вперёд письменно, гарантия в договоре, взрослым и детям в одной клинике, приём по записи.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Фонтанка · стоматология">
+<meta property="og:title" content="Стоматология «Фонтанка»: смета на год вперёд">
+<meta property="og:description" content="План лечения письменно: что делаем, в каком порядке и сколько стоит за год. Гарантия в договоре, взрослым и детям в одной клинике.">
+<meta property="og:url" content="https://ryauzoff.github.io/stomatologiya-demo-2/">
+<meta property="og:image" content="https://ryauzoff.github.io/stomatologiya-demo-2/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%274%27 width=%2724%27 height=%2724%27 fill=%27none%27 stroke=%27%23c2a06a%27 stroke-width=%275%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vibe.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"Стоматология «Фонтанка»","description":"Стоматология в центре Санкт-Петербурга: план лечения и смета на год вперёд письменно, гарантия в договоре, взрослым и детям.","url":"https://ryauzoff.github.io/stomatologiya-demo-2/","image":"https://ryauzoff.github.io/stomatologiya-demo-2/assets/og.jpg","telephone":"+7 (812) 640-12-40","openingHours":"Пн–Сб 9:00–21:00, Вс 10:00–18:00","address":{"@type":"PostalAddress","streetAddress":"набережная реки Фонтанки, 74","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"priceRange":"от 1 900 ₽"}
+</script>
+<style>
+  /* ---- тема: графит и латунь. Палитра задана целиком здесь, кроме шести мест разметки ---- */
+  .v-page {
+    --v-canvas: #14151a; --v-surface: #1c1d23;
+    --v-ink: #efe8dc; --v-ink-soft: #a79e91;
+    --v-accent: #c2a06a; --v-accent-ink: #17140f;
+    --v-accent-deep: #d9bd8c;
+    --v-font-display: "Prata", "Times New Roman", serif;
+    --v-font-text: "Golos Text", "Segoe UI", system-ui, sans-serif;
+    --v-display-weight: 400;
+    --v-track-tight: -0.01em;
+    --v-shadow-color: 0 0 0;
+    --v-e1: 0 1px 2px rgb(0 0 0 / .3), 0 10px 26px rgb(0 0 0 / .35);
+    --v-e2: 0 2px 8px rgb(0 0 0 / .35), 0 26px 60px rgb(0 0 0 / .45);
+    --v-radius: 3px;
+    --v-t-xs: clamp(0.8125rem, 0.79rem + 0.15vw, 0.85rem);
+    --v-t-sm: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+    --v-section: clamp(3.6rem, 8vw, 7rem);
+    --v-warn: #e9a08d;
+  }
+  html, body { margin: 0; background: #14151a; }
+  .v-page .v-display { font-weight: 400; letter-spacing: -0.012em; line-height: 1.04; }
+  .v-page .v-lede { max-width: 46ch; }
+  .v-page .v-label { font-weight: 500; letter-spacing: .16em; font-size: 0.7rem; }
+  .nm { white-space: nowrap; }
+  /* сброс движка .v-page button перебивает фон кнопки-элемента, возвращаем ему вид .v-btn */
+  .v-page button.v-btn { background: var(--v-accent); color: var(--v-accent-ink); }
+  /* заголовки секций: --v-t-3xl рассчитан на первый экран, в секциях он слишком крупный */
+  .v-page .v-section .v-display--lg { font-size: clamp(1.85rem, 1.15rem + 2.1vw, 3.05rem); line-height: 1.08; }
+
+  /* ---- шапка ---- */
+  .bar { position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: var(--v-4);
+    padding: var(--v-3) var(--v-gutter);
+    background: rgb(20 21 26 / 0); transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out); }
+  .bar.is-scrolled { background: rgb(20 21 26 / .88); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--v-hair); }
+  .bar__mark { font-family: var(--v-font-display); font-size: var(--v-t-lg); text-decoration: none; display: inline-flex; align-items: center; gap: .55em; min-height: 44px; white-space: nowrap; }
+  .bar__mark i { width: .62em; height: .62em; border: 1px solid var(--v-accent); display: inline-block; flex: none; transform: rotate(45deg); }
+  .qnav { display: flex; gap: var(--v-5); font-size: var(--v-t-sm); }
+  .qnav a { text-decoration: none; color: var(--v-ink-soft); display: inline-flex; align-items: center; min-height: 44px; transition: color .16s var(--v-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .qnav a:hover { color: var(--v-ink); } }
+  .bar__right { display: flex; align-items: center; gap: var(--v-4); }
+  .bar__tel { text-decoration: none; font-weight: 500; font-size: var(--v-t-sm); color: var(--v-ink); display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--v-2); white-space: nowrap; }
+  .bar .v-btn { padding: .72em 1.35em; }
+  @media (max-width: 1080px) { .qnav { display: none; } }
+  @media (max-width: 700px) {
+    .bar__tel { display: none; }
+    .bar__mark { font-size: 1.05rem; }
+    .bar .v-btn { padding: 0 1.05em; min-height: 44px; }
+    .bar__right { gap: var(--v-2); }
+  }
+
+  /* ---- 1 · первый экран: тёмный кадр, текст по центру, полоса фактов ---- */
+  .hero__back img { position: absolute; max-width: none; width: 112%; height: 112%; left: -6%; top: -6%; object-fit: cover; object-position: 64% 50%; }
+  .hero__veil { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background:
+      radial-gradient(72% 62% at 50% 44%, rgb(8 9 12 / .62) 0%, rgb(8 9 12 / .26) 56%, transparent 80%),
+      linear-gradient(to bottom, rgb(8 9 12 / .72) 0%, rgb(8 9 12 / .1) 26%, rgb(8 9 12 / .12) 52%, rgb(8 9 12 / .9) 100%); }
+  .hero__copy { inset: 0; max-width: none; display: grid; grid-template-columns: 100%; align-content: center; justify-items: center; text-align: center;
+    padding: clamp(5.5rem, 12vh, 8rem) var(--v-gutter) clamp(3rem, 8vh, 5rem); }
+  /* две реплики в одном кадре: первая держится, вторая входит с 0.58 и уводит в услуги */
+  .hero__panel { grid-area: 1 / 1; }
+  .hero__label { display: block; margin-bottom: var(--v-5); color: var(--v-accent-deep); }
+  .hero h1 { font-size: clamp(2.4rem, 1.3rem + 3.9vw, 4.8rem); max-width: 21ch; }
+  .hero__lede { margin-top: var(--v-5); font-size: clamp(1rem, 0.94rem + 0.35vw, 1.22rem); line-height: 1.5; color: var(--v-ink); max-width: 52ch; }
+  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--v-4) var(--v-6); margin-top: var(--v-6); }
+  .hero__tel { text-decoration: none; color: var(--v-ink); font-size: var(--v-t-sm); display: inline-flex; align-items: center; min-height: 44px; gap: .4em; }
+  .hero__tel b { font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+  .hero__facts { margin-top: clamp(1.6rem, 4vh, 2.6rem); width: min(100%, 52rem); padding-top: var(--v-5); border-top: 1px solid rgb(239 232 220 / .16);
+    display: flex; flex-wrap: wrap; justify-content: center; gap: var(--v-3) var(--v-7); }
+  .hero__facts li { display: flex; align-items: baseline; gap: .55em; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .hero__facts li b { color: var(--v-ink); font-weight: 500; }
+  .hero__facts li::before { content: ""; width: .38em; height: .38em; border-radius: 50%; background: var(--v-accent); transform: translateY(-.15em); flex: none; }
+  .hero__panel--2 h2 { font-size: clamp(1.7rem, 1.1rem + 2.2vw, 3rem); max-width: 24ch; }
+  .hero__panel--2 .hero__lede { max-width: 42ch; }
+  .hero__panel--2 .hero__sign { display: block; margin-top: var(--v-5); font-size: var(--v-t-sm); color: var(--v-accent-deep); letter-spacing: .04em; }
+  @media (max-width: 860px) {
+    .hero__back img { object-position: 62% 82%; }
+    .hero__copy { align-content: start; padding-top: clamp(5.5rem, 13vh, 7rem); }
+    .hero h1 { font-size: clamp(1.85rem, 1.15rem + 3.2vw, 2.5rem); max-width: 24ch; }
+    .hero__lede { font-size: var(--v-t-base); margin-top: var(--v-3); }
+    .hero__cta { margin-top: var(--v-4); gap: var(--v-2) var(--v-4); }
+    .hero__facts { flex-direction: column; align-items: flex-start; gap: var(--v-1); margin-top: var(--v-4); padding-top: var(--v-4); text-align: left; }
+  }
+
+  /* ---- 2 · услуги: мозаика с фото ---- */
+  .usl__head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--v-5) var(--v-8); align-items: end; margin-bottom: var(--v-7); }
+  .usl__head .v-label { grid-column: 1 / -1; display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
+  .usl__head h2 { max-width: 22ch; }
+  .usl__head p { color: var(--v-ink-soft); max-width: 46ch; text-wrap: pretty; }
+  .usl__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--v-4); align-items: start; }
+  .u { grid-column: span 4; display: grid; grid-template-rows: auto 1fr; border-radius: var(--v-radius); overflow: hidden;
+    background: var(--v-surface); box-shadow: var(--v-e1); transition: box-shadow .4s var(--v-ease-out), outline-color .3s; outline: 1px solid transparent; }
+  .u--wl { grid-column: span 7; } .u--ws { grid-column: span 5; } .u--wh { grid-column: span 6; }
+  .u__fig { aspect-ratio: 3 / 2; overflow: hidden; margin: 0; }
+  .u__fig img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--v-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .u:hover { box-shadow: var(--v-e2); outline-color: rgb(194 160 106 / .45); } .u:hover .u__fig img { transform: scale(1.05); } }
+  .u__body { padding: var(--v-4) var(--v-5) var(--v-5); display: grid; align-content: start; gap: var(--v-2); }
+  .u h3 { font-family: var(--v-font-display); font-size: clamp(1.1rem, 0.98rem + 0.55vw, 1.48rem); line-height: 1.16; }
+  .u p { color: var(--v-ink-soft); font-size: var(--v-t-sm); max-width: 46ch; text-wrap: pretty; }
+  .u__price { margin-top: var(--v-1); font-family: var(--v-font-display); color: var(--v-accent-deep); font-size: var(--v-t-base); }
+  .u__price small { font-family: var(--v-font-text); color: var(--v-ink-soft); font-size: var(--v-t-xs); }
+  .usl__foot { margin-top: var(--v-7); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--v-4) var(--v-8); }
+  .usl__foot p { color: var(--v-ink-soft); max-width: 58ch; text-wrap: pretty; }
+  @media (max-width: 1000px) { .u, .u--wl, .u--ws, .u--wh { grid-column: span 6; } }
+  @media (max-width: 720px) { .usl__head { grid-template-columns: 1fr; } .u, .u--wl, .u--ws, .u--wh { grid-column: span 12; } .u__body { padding: var(--v-4); } }
+
+  /* ---- 3 · смета: фирменный ход, выбор услуг и итог ---- */
+  .calc__head { max-width: 52rem; margin-bottom: var(--v-7); }
+  .calc__head .v-label { display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
+  .calc__head p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 52ch; text-wrap: pretty; }
+  .calc { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: var(--v-8) var(--v-9); align-items: start; }
+  .calc__list { display: grid; border-bottom: 1px solid var(--v-hair); }
+  .calc__row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--v-4); align-items: center;
+    padding: var(--v-4) var(--v-3); margin-inline: calc(-1 * var(--v-3)); border-top: 1px solid var(--v-hair); cursor: pointer; transition: background-color .3s; }
+  .calc__row:first-child { border-top: 0; }
+  @media (hover: hover) and (pointer: fine) { .calc__row:hover { background: var(--v-surface); } }
+  .calc__row input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .calc__box { width: 1.15rem; height: 1.15rem; border: 1px solid var(--v-hair-strong); border-radius: 2px; display: grid; place-items: center;
+    font-size: .8rem; line-height: 1; color: transparent; transition: background-color .2s, border-color .2s, color .2s; flex: none; }
+  .calc__row input:checked + .calc__box { background: var(--v-accent); border-color: var(--v-accent); color: var(--v-accent-ink); }
+  .calc__row input:focus-visible + .calc__box { outline: 2px solid var(--v-accent); outline-offset: 3px; }
+  .calc__row.is-locked { cursor: default; }
+  .calc__row.is-locked .calc__box { background: rgb(194 160 106 / .18); border-color: var(--v-accent); color: var(--v-accent-deep); }
+  .calc__name { display: grid; gap: .15em; }
+  .calc__name b { font-weight: 500; }
+  .calc__name span { color: var(--v-ink-soft); font-size: var(--v-t-sm); }
+  .calc__price { font-family: var(--v-font-display); color: var(--v-accent-deep); white-space: nowrap; font-size: var(--v-t-base); }
+  .calc__sum { position: sticky; top: clamp(5rem, 12vh, 7rem); background: var(--v-surface); border: 1px solid var(--v-hair);
+    border-radius: var(--v-radius); padding: var(--v-6); display: grid; gap: var(--v-4); box-shadow: var(--v-e1); }
+  .calc__sum .v-label { color: var(--v-ink-soft); }
+  .calc__total { display: flex; align-items: baseline; justify-content: space-between; gap: var(--v-3); border-bottom: 1px solid var(--v-hair); padding-bottom: var(--v-4); }
+  .calc__total b { font-family: var(--v-font-display); font-size: clamp(1.9rem, 1.2rem + 2.2vw, 2.7rem); line-height: 1; }
+  .calc__total span { color: var(--v-ink-soft); font-size: var(--v-t-sm); }
+  .calc__meta { display: grid; gap: var(--v-2); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .calc__meta b { color: var(--v-ink); font-weight: 500; }
+  .calc__note { font-size: var(--v-t-xs); color: var(--v-ink-soft); }
+  .calc__sum .v-btn { justify-content: center; }
+  @media (max-width: 1000px) {
+    .calc { grid-template-columns: 1fr; gap: var(--v-6); }
+    .calc__sum { position: static; }
+  }
+  @media (max-width: 720px) {
+    /* на телефоне цена уходит под описание, иначе колонка текста сжимается в три слова */
+    .calc__row { grid-template-columns: 1.15rem minmax(0, 1fr); row-gap: .25em; align-items: start; }
+    .calc__price { grid-column: 2; grid-row: 2; justify-self: start; font-size: var(--v-t-sm); }
+  }
+
+  /* ---- 4 · врачи ---- */
+  .who__head { max-width: 46rem; }
+  .who__head .v-label { display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
+  .who__head p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 50ch; text-wrap: pretty; }
+  .who { margin-top: var(--v-7); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--v-8) var(--v-9); align-items: start; }
+  .who__fig { position: relative; aspect-ratio: 3 / 4; border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); background: var(--v-surface); max-width: 24rem; margin: 0; }
+  .who__fig figcaption { position: absolute; left: var(--v-5); right: var(--v-5); bottom: var(--v-5); font-size: var(--v-t-sm); color: var(--v-ink-soft); text-shadow: 0 1px 8px rgb(0 0 0 / .8); }
+  .v-page .who__ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .6s var(--v-ease-out), transform .9s var(--v-ease-out); }
+  .v-page .who__ph--2, .v-page .who__ph--3 { opacity: 0; transform: scale(1.04); }
+  .who[data-doc="2"] .who__ph--1 { opacity: 0; transform: scale(1.04); }
+  .who[data-doc="2"] .who__ph--2 { opacity: 1; transform: none; }
+  .who[data-doc="3"] .who__ph--1 { opacity: 0; transform: scale(1.04); }
+  .who[data-doc="3"] .who__ph--3 { opacity: 1; transform: none; }
+  .docs { display: grid; gap: var(--v-4); }
+  .docs > .doc { transform: none; transition: opacity .6s var(--v-ease-out); }
+  .doc { display: grid; gap: var(--v-2); padding: var(--v-5) var(--v-6); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); border-left: 2px solid transparent; }
+  .doc[role="button"] { position: relative; cursor: pointer; transition: box-shadow .35s var(--v-ease-out), opacity .35s var(--v-ease-out), border-color .35s; }
+  .doc[role="button"]:not(.is-on) { opacity: .74; border-left-color: transparent; }
+  .doc[role="button"].is-on { border-left-color: var(--v-accent); }
+  .doc[role="button"]:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 3px; }
+  @media (hover: hover) { .doc[role="button"]:not(.is-on):hover { opacity: 1; } }
+  .docs__hint { font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-ink-soft); }
+  .doc b { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); line-height: 1.1; }
+  .doc .spec { color: var(--v-ink); font-size: var(--v-t-sm); }
+  .doc .says { margin-top: var(--v-2); padding-top: var(--v-3); border-top: 1px solid var(--v-hair); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 44ch; text-wrap: pretty; }
+  .clean { margin-top: var(--v-8); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--v-8) var(--v-9); align-items: center; }
+  .clean__fig { position: relative; aspect-ratio: 16 / 10; border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); background: var(--v-surface); margin: 0; }
+  .clean__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .clean__fig figcaption { position: absolute; left: var(--v-5); top: var(--v-5); right: 45%; font-size: var(--v-t-sm); color: var(--v-ink); text-shadow: 0 1px 8px rgb(0 0 0 / .85); }
+  .clean__copy h3 { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); line-height: 1.12; margin-bottom: var(--v-5); }
+  .facts li { padding: var(--v-4) 0; border-top: 1px solid var(--v-hair); display: grid; gap: var(--v-1); }
+  .facts li:last-child { border-bottom: 1px solid var(--v-hair); }
+  .facts b { font-weight: 500; }
+  .facts span { color: var(--v-ink-soft); font-size: var(--v-t-sm); max-width: 46ch; }
+  @media (max-width: 860px) {
+    .who { grid-template-columns: 1fr; gap: var(--v-6); }
+    .who__fig { max-width: 20rem; aspect-ratio: 4 / 5; }
+    .doc { padding: var(--v-4) var(--v-5); }
+    .clean { grid-template-columns: 1fr; gap: var(--v-6); }
+    .clean__fig { aspect-ratio: 16 / 11; }
+  }
+
+  /* ---- 5 · отзывы ---- */
+  @property --r { syntax: "<number>"; inherits: false; initial-value: 0; }
+  .reviews__head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--v-5) var(--v-8); align-items: end; margin-bottom: var(--v-7); }
+  .reviews__head .v-label { display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
+  .reviews__rating { display: grid; grid-template-columns: auto auto; gap: var(--v-1) var(--v-4); align-items: center; font-size: var(--v-t-sm); }
+  .reviews__num { grid-row: 1 / span 2; font-family: var(--v-font-display); font-size: var(--v-t-2xl); line-height: 1; }
+  .reviews__stars { --size: 1.05rem; display: inline-block; width: calc(var(--size) * 5); height: var(--size);
+    background: linear-gradient(90deg, var(--v-accent) calc(var(--r, 0) / 5 * 100%), var(--v-hair-strong) 0);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z'/%3E%3C/svg%3E") 0 0 / var(--size) var(--size) repeat-x; }
+  .reviews__stars--sm { --size: .8rem; vertical-align: middle; }
+  .reviews__list { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: var(--v-6); align-items: start; }
+  .reviews__item { padding-top: var(--v-5); border-top: 1px solid var(--v-hair); }
+  .reviews__item--big .reviews__text { font-family: var(--v-font-display); font-size: var(--v-t-lg); line-height: 1.42; }
+  .reviews__text { text-wrap: pretty; }
+  .reviews__meta { margin-top: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .reviews__meta b { color: var(--v-ink); font-weight: 500; }
+  .reviews__fact { margin-top: var(--v-7); padding-top: var(--v-5); border-top: 1px solid var(--v-hair); font-size: var(--v-t-xs); color: var(--v-ink-soft); max-width: 70ch; }
+  @media (max-width: 860px) { .reviews__list { grid-template-columns: 1fr; } .reviews__head { grid-template-columns: 1fr; align-items: start; margin-bottom: var(--v-6); } }
+
+  /* ---- 6 · запись и контакты ---- */
+  .close__back img { position: absolute; max-width: none; width: 112%; height: 112%; left: -6%; top: -6%; object-fit: cover; object-position: 66% 50%; }
+  .close__veil { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(to right, rgb(10 11 14 / .92) 0%, rgb(10 11 14 / .82) 42%, rgb(10 11 14 / .35) 68%, transparent 84%); }
+  .close { position: relative; z-index: 3; height: 100%; display: grid; grid-template-rows: 1fr auto; padding: 0 var(--v-gutter); }
+  .close__inner { align-self: center; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); gap: var(--v-8) var(--v-9); align-items: center; padding-top: clamp(4rem, 8vh, 6rem); width: min(100%, 76rem); margin-inline: auto; }
+  .close__copy .v-label { display: block; margin-bottom: var(--v-4); color: var(--v-accent-deep); }
+  .close__copy .v-display { max-width: 16ch; font-size: clamp(1.75rem, 1.05rem + 2.3vw, 2.95rem); line-height: 1.06; }
+  .close__copy p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 42ch; text-wrap: pretty; }
+  .close__meta { margin-top: var(--v-6); display: grid; gap: var(--v-2); font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .close__tel { font-family: var(--v-font-display); font-size: var(--v-t-xl); text-decoration: none; color: var(--v-ink); display: inline-block; padding-block: .2em; letter-spacing: -0.01em; }
+  .close__meta b { color: var(--v-ink); font-weight: 500; }
+  .close__meta a:not(.close__tel) { color: var(--v-ink); display: inline-block; padding-block: .2em; }
+  .form { display: grid; gap: var(--v-3); background: rgb(28 29 35 / .86); border: 1px solid var(--v-hair); border-radius: var(--v-radius);
+    padding: var(--v-6); box-shadow: var(--v-e2); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .form .v-label { color: var(--v-ink-soft); }
+  .form__fields { display: grid; gap: var(--v-3); }
+  .form label { display: grid; gap: .4em; font-size: var(--v-t-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--v-ink-soft); }
+  .form input, .form select { font: inherit; font-size: var(--v-t-sm); letter-spacing: 0; text-transform: none; color: var(--v-ink);
+    background: rgb(239 232 220 / .05); border: 1px solid var(--v-hair-strong); border-radius: 2px; padding: .8em .9em; min-height: 48px; width: 100%; }
+  .form input:focus, .form select:focus { outline: none; border-color: var(--v-accent); box-shadow: 0 0 0 1px var(--v-accent); }
+  .form input[aria-invalid="true"] { border-color: var(--v-warn); }
+  .form__err { min-height: 1.2em; font-size: var(--v-t-xs); color: var(--v-warn); }
+  .form .v-btn { justify-content: center; margin-top: var(--v-2); width: 100%; }
+  .form__note { font-size: var(--v-t-xs); color: var(--v-ink-soft); }
+  .form__ok { display: none; gap: var(--v-3); }
+  .form__ok b { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-lg); }
+  .form.is-done .form__fields, .form.is-done .form__err, .form.is-done .form__note, .form.is-done > .v-btn { display: none; }
+  .form.is-done .form__ok { display: grid; }
+  .foot { display: grid; grid-template-columns: auto 1fr auto; gap: var(--v-3) var(--v-6); align-items: baseline; margin: 0 calc(-1 * var(--v-gutter)); padding: var(--v-6) var(--v-gutter);
+    border-top: 1px solid rgb(239 232 220 / .12); background: rgb(12 13 16 / .8); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: var(--v-t-xs); color: var(--v-ink-soft); }
+  .foot__warn { grid-column: 1 / -1; color: var(--v-ink); font-weight: 500; letter-spacing: .01em; }
+  @media (max-width: 1080px) {
+    .close__inner { grid-template-columns: 1fr; gap: var(--v-6); }
+    .close__copy .v-display { max-width: none; }
+    .form { max-width: 32rem; }
+  }
+  @media (max-width: 860px) {
+    .close__back img { object-position: 70% 50%; }
+    .close__veil { background: linear-gradient(to bottom, rgb(10 11 14 / .93) 0%, rgb(10 11 14 / .88) 60%, rgb(10 11 14 / .6) 100%); }
+    .close__meta { grid-template-columns: 1fr; gap: var(--v-1); margin-top: var(--v-5); }
+    .close__tel { font-size: var(--v-t-lg); }
+    .form { padding: var(--v-5); }
+    .foot { grid-template-columns: 1fr; gap: var(--v-2); font-size: var(--v-t-sm); padding: var(--v-5) var(--v-gutter) calc(var(--v-5) + env(safe-area-inset-bottom)); }
+    /* на телефоне блок записи не влезает в закреплённую сцену: он становится обычной секцией
+       (JS до монтирования движка переключает акт с pin на flow), иначе текст и форма обрезаются */
+    #zapis [data-v-stage] { position: relative; height: auto; overflow: hidden; display: block; }
+    #zapis .close { height: auto; padding-bottom: 0; }
+    #zapis .close__inner { padding-top: clamp(4.5rem, 9vh, 6rem); padding-bottom: var(--v-6); }
+    .clean__fig figcaption { right: var(--v-5); }
+  }
+</style>
+</head>
+<body>
+<div class="v-page">
+  <span data-v-progress></span>
+
+  <header class="bar">
+    <a class="bar__mark" href="#top"><i aria-hidden="true"></i>Фонтанка</a>
+    <nav class="qnav" aria-label="Разделы">
+      <a href="#uslugi">Услуги</a>
+      <a href="#smeta">Смета на год</a>
+      <a href="#vrachi">Врачи</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#zapis">Запись</a>
+    </nav>
+    <div class="bar__right">
+      <a class="bar__tel" href="tel:+78126401240">+7 (812) 640-12-40</a>
+      <a class="v-btn" href="#zapis">Записаться</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1 · УЗНАВАНИЕ: тёмный кадр, оффер по центру, полоса фактов -->
+    <section id="top" data-v-act="pin" data-v-span="2.4" data-v-drift="#14151a" aria-label="Стоматология «Фонтанка»">
+      <div data-v-stage>
+        <div class="v-layer hero__back" data-v-parallax="-0.4">
+          <picture>
+            <source media="(max-width: 860px)" srcset="assets/hero-m.webp">
+            <img id="hero-img" src="assets/hero.webp" alt="" width="1920" height="1080" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero__veil" aria-hidden="true"></div>
+
+        <div class="v-copy hero__copy">
+          <div class="hero__panel hero__panel--1" data-v-cue="0 0.52 0 0.12" data-v-rise="0">
+            <span class="v-label hero__label">Стоматология · Санкт-Петербург</span>
+            <h1 class="v-display v-display--xl" data-v-kinetic="lines">Стоматология у Фонтанки: смета на год вперёд</h1>
+            <p class="hero__lede">План лечения письменно: что делаем, в каком порядке и сколько стоит за год. Гарантия в договоре, взрослым и детям.</p>
+            <div class="hero__cta">
+              <a class="v-btn" href="#zapis">Записаться</a>
+              <a class="hero__tel" href="tel:+78126401240">или позвоните <b>+7 (812) 640-12-40</b></a>
+            </div>
+            <ul class="hero__facts">
+              <li><b>План и смета</b> на год вперёд</li>
+              <li><b>Гарантия</b> в договоре</li>
+              <li><b>Взрослым и детям</b> в одной клинике</li>
+            </ul>
+          </div>
+
+          <div class="hero__panel hero__panel--2" data-v-cue="0.58 1 0.12 0.04" data-v-rise="0">
+            <h2 class="v-display">Вы уходите с планом на руках</h2>
+            <p class="hero__lede">Смета на год, сроки по каждому этапу и гарантия отдельным пунктом договора. Дальше решаете вы и дома, а не в кресле с открытым ртом.</p>
+            <span class="hero__sign">Ниже: услуги, смета на год, врачи и запись</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ВЫБОР: шесть услуг мозаикой, у каждой своё фото -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#181a1f" id="uslugi" aria-label="Услуги клиники">
+      <div class="v-wrap">
+        <div class="usl__head" data-v-in data-v-stagger="70">
+          <span class="v-label">Услуги</span>
+          <h2 class="v-display v-display--lg">Что лечим: от гигиены до имплантации</h2>
+          <p>Взрослым и детям, в одном кабинете и у своего врача. По каждой услуге цена «от» известна заранее, а точная сумма входит в годовой план после осмотра.</p>
+        </div>
+
+        <div class="usl__grid" data-v-in data-v-stagger="55">
+          <article class="u u--wl">
+            <figure class="u__fig"><img src="assets/usl-gigiena.webp" alt="Лоток для профессиональной гигиены: ультразвук, порошок, пакеты со стерильным инструментом" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Профессиональная гигиена</h3>
+              <p>Ультразвук, порошок, полировка и уход, который подходит вашим зубам. Один визит, около часа.</p>
+              <span class="u__price">от 6 900 ₽ <small>· один визит</small></span>
+            </div>
+          </article>
+
+          <article class="u u--ws">
+            <figure class="u__fig"><img src="assets/usl-karies.webp" alt="Микроскоп у кресла: лечение кариеса и каналов под увеличением" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Кариес и каналы</h3>
+              <p>Пломба за визит, каналы под микроскопом и по снимкам.</p>
+              <span class="u__price">от 7 900 ₽ <small>· визит</small></span>
+            </div>
+          </article>
+
+          <article class="u u--ws">
+            <figure class="u__fig"><img src="assets/usl-implant.webp" alt="Модель челюсти с титановым имплантом и керамической коронкой рядом" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Имплантация</h3>
+              <p>Этапы, приживление и сроки в плане на год.</p>
+              <span class="u__price">от 46 000 ₽ <small>· этап</small></span>
+            </div>
+          </article>
+
+          <article class="u u--wl">
+            <figure class="u__fig"><img src="assets/usl-koronki.webp" alt="Керамические коронки и винир на тёмном блюдце при тёплом свете" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Коронки и виниры</h3>
+              <p>Материал подбираем под зуб и бюджет, на время изготовления ставим временную коронку. Срок изготовления пишем в план, а не говорим «как получится».</p>
+              <span class="u__price">от 26 000 ₽ <small>· одна единица</small></span>
+            </div>
+          </article>
+
+          <article class="u u--wh">
+            <figure class="u__fig"><img src="assets/usl-orto.webp" alt="Прозрачный элайнер в руке врача при тёплом свете" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Брекеты и элайнеры</h3>
+              <p>План по этапам и цена всего лечения до установки.</p>
+              <span class="u__price">от 165 000 ₽ <small>· весь курс</small></span>
+            </div>
+          </article>
+
+          <article class="u u--wh">
+            <figure class="u__fig"><img src="assets/usl-deti.webp" alt="Детский уголок в клинике: низкий стеллаж с игрушками, зелёный ковёр, тёплая лампа" width="1000" height="667" loading="lazy" decoding="async"></figure>
+            <div class="u__body">
+              <h3>Детский приём</h3>
+              <p>Первый визит - знакомство с кабинетом, без лечения.</p>
+              <span class="u__price">от 3 900 ₽ <small>· визит</small></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="usl__foot" data-v-in data-v-in-self>
+          <p>Не знаете, с чего начать? Начните с осмотра: врач посмотрит, покажет снимки на экране и соберёт план с ценой по каждому пункту. Домой можно уйти с планом на бумаге.</p>
+          <a class="v-btn v-btn--ghost" href="#zapis">Записаться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · ВЫБОР: фирменный ход «смета на год» - отметили услуги и увидели итог и сроки -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#14151a" id="smeta" aria-label="Смета на год">
+      <div class="v-wrap">
+        <div class="calc__head" data-v-in data-v-stagger="70">
+          <span class="v-label">Главное отличие</span>
+          <h2 class="v-display v-display--lg">Смета на год, а не «узнаете на приёме»</h2>
+          <p>Отметьте, что планируете сделать, и увидите порядок суммы и сроки. Это не диагноз и не оферта: точный план врач соберёт после осмотра, но порядок цен вы будете знать до кресла.</p>
+        </div>
+
+        <div class="calc" data-v-in data-v-stagger="50">
+          <div class="calc__list" id="calc-list">
+            <label class="calc__row is-locked">
+              <input type="checkbox" checked disabled aria-label="Осмотр и план лечения, входит в смету всегда">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Осмотр, снимок и план</b><span>С этого начинается любой план. Входит в смету всегда</span></span>
+              <span class="calc__price">1 900 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" checked data-id="gigiena">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Профессиональная гигиена</b><span>Один визит, около часа. Делаем до лечения и до отбеливания</span></span>
+              <span class="calc__price">6 900 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" checked data-id="karies">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Лечение кариеса</b><span>Пломба за визит, анестезия до начала работы</span></span>
+              <span class="calc__price">7 900 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" data-id="kanaly">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Лечение каналов</b><span>Два визита, под микроскопом и по снимкам</span></span>
+              <span class="calc__price">13 500 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" data-id="koronka">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Коронка</b><span>Три визита: подготовка, слепок, установка. Временная коронка на время изготовления</span></span>
+              <span class="calc__price">26 000 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" data-id="implant">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Имплантация</b><span>Четыре визита и приживление: самый длинный этап в плане</span></span>
+              <span class="calc__price">46 000 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" data-id="orto">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Брекеты или элайнеры</b><span>Восемь контрольных визитов за курс, обычно около года</span></span>
+              <span class="calc__price">165 000 ₽</span>
+            </label>
+
+            <label class="calc__row">
+              <input type="checkbox" data-id="deti">
+              <span class="calc__box" aria-hidden="true">✓</span>
+              <span class="calc__name"><b>Детский приём</b><span>Знакомство и лечение молочных зубов, один визит</span></span>
+              <span class="calc__price">3 900 ₽</span>
+            </label>
+          </div>
+
+          <div class="calc__sum" aria-live="polite">
+            <span class="v-label">Смета по выбранному</span>
+            <div class="calc__total">
+              <b class="v-nums" id="calc-total">0 ₽</b>
+              <span id="calc-count">0 услуг</span>
+            </div>
+            <div class="calc__meta">
+              <span>Сроки: <b id="calc-weeks">-</b></span>
+              <span>Визитов: <b id="calc-visits">-</b></span>
+              <span>Порядок работ: <b>от плана к лечению</b></span>
+            </div>
+            <a class="v-btn" href="#zapis">Обсудить план</a>
+            <span class="calc__note">Сумма и сроки примерные: их уточняет врач на осмотре. Итоговая смета фиксируется в договоре.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · ДОВЕРИЕ: три врача и то, как рождается план -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#181a1f" id="vrachi" aria-label="Врачи клиники">
+      <div class="v-wrap">
+        <div class="who__head" data-v-in data-v-stagger="70">
+          <span class="v-label">Кто лечит</span>
+          <h2 class="v-display v-display--lg">Один врач ведёт вас от плана до конца</h2>
+          <p>Три врача, каждый на своём направлении. План лечения собирает тот, кто будет лечить, и он же отвечает на вопросы по смете.</p>
+        </div>
+
+        <div class="who" id="who" data-doc="1">
+          <figure class="who__fig" data-v-reveal="up" data-v-reveal-at="0.12 0.5">
+            <img class="who__ph who__ph--1" src="assets/doctor-1.webp" alt="Врач-терапевт у кресла в тёмном кабинете клиники, смотрит в камеру" width="900" height="1200" loading="lazy" decoding="async">
+            <img class="who__ph who__ph--2" src="assets/doctor-2.webp" alt="Врач-ортопед у того же кресла в том же кабинете" width="900" height="1200" loading="lazy" decoding="async">
+            <img class="who__ph who__ph--3" src="assets/doctor-3.webp" alt="Детский врач клиники у того же кресла" width="900" height="1200" loading="lazy" decoding="async">
+            <figcaption>Фото демонстрационные: на боевом сайте здесь будут портреты врачей клиники</figcaption>
+          </figure>
+
+          <div class="docs" data-v-in data-v-stagger="90">
+            <article class="doc doc--lead is-on" data-v-tilt="4" data-doc="1" role="button" tabindex="0" aria-pressed="true" aria-controls="who">
+              <b>Анна Ковалёва</b>
+              <span class="spec">Стоматолог-терапевт · лечение кариеса и каналов</span>
+              <p class="says">Работает с микроскопом. Сначала показывает снимок на экране и объясняет, что видно, и только потом берёт инструмент.</p>
+            </article>
+            <article class="doc" data-v-tilt="4" data-doc="2" role="button" tabindex="0" aria-pressed="false" aria-controls="who">
+              <b>Дмитрий Лебедев</b>
+              <span class="spec">Ортопед-имплантолог · коронки, виниры, имплантация</span>
+              <p class="says">Считает план на год: этапы, сроки изготовления и цену каждой единицы до начала работы.</p>
+            </article>
+            <article class="doc" data-v-tilt="4" data-doc="3" role="button" tabindex="0" aria-pressed="false" aria-controls="who">
+              <b>Мария Гусева</b>
+              <span class="spec">Детский стоматолог · приём с 3 лет</span>
+              <p class="says">Первый визит - знакомство с кабинетом и креслом. Лечим только то, на что ребёнок согласился сам.</p>
+            </article>
+            <p class="docs__hint" aria-hidden="true">Нажмите на карточку - покажем фото врача</p>
+          </div>
+        </div>
+
+        <div class="clean">
+          <figure class="clean__fig" data-v-reveal="left" data-v-reveal-at="0.12 0.5">
+            <img src="assets/reception.webp" alt="Ресепшен клиники: тёмный ореховый стол, латунная лампа, зелёная бархатная банкетка, высокое окно" width="1400" height="933" loading="lazy" decoding="async">
+            <figcaption>План собираем за столом на ресепшене, а не в кресле с открытым ртом</figcaption>
+          </figure>
+          <div class="clean__copy" data-v-in data-v-stagger="70">
+            <h3>Как устроен план на год</h3>
+            <ul class="facts">
+              <li><b>Сначала план, потом лечение</b><span>Что делаем, в каком порядке, за сколько визитов и сколько это стоит. Письменно, с копией вам</span></li>
+              <li><b>Смета фиксируется в договоре</b><span>Если по ходу нашли что-то ещё - останавливаемся, показываем и спрашиваем, делать ли</span></li>
+              <li><b>Гарантия письменно</b><span>На лечение и на коронки. Условия гарантии - отдельным пунктом договора, а не на словах</span></li>
+              <li><b>Сроки называем заранее</b><span>Изготовление коронки, приживление импланта, курс ортодонтии - каждой строке своя дата в плане</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · ДОВЕРИЕ: отзывы (демонстрационные, помечены) -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#14151a" id="otzyvy" aria-label="Отзывы">
+      <div class="v-wrap">
+        <div class="reviews__head" data-v-in data-v-stagger="60">
+          <div>
+            <span class="v-label">Отзывы</span>
+            <h2 class="v-display v-display--md">Что говорят пациенты</h2>
+          </div>
+          <div class="reviews__rating">
+            <span class="reviews__num v-nums">5,0</span>
+            <span class="reviews__stars" style="--r: 5" role="img" aria-label="рейтинг 5,0 из 5"></span>
+            <span><span class="v-soft">34 отзыва</span></span>
+          </div>
+        </div>
+        <ul class="reviews__list" data-v-in data-v-stagger="90">
+          <li class="reviews__item reviews__item--big">
+            <p class="reviews__text">«Пришла с планом от другой клиники на 180 тысяч, ушла со сметой на 96 и с той же работой по пунктам. Показали снимки на экране, объяснили, что можно отложить на следующий год»</p>
+            <p class="reviews__meta"><b>Елена</b> · март 2026 · <span class="reviews__stars reviews__stars--sm" style="--r: 5" role="img" aria-label="оценка 5 из 5"></span></p>
+          </li>
+          <li class="reviews__item">
+            <p class="reviews__text">«Ребёнок боялся кресла. Первый визит был просто «посмотреть», без лечения. На третьем визите вылечили два зуба и он не пикнул»</p>
+            <p class="reviews__meta"><b>Марина</b> · январь 2026 · <span class="reviews__stars reviews__stars--sm" style="--r: 5" role="img" aria-label="оценка 5 из 5"></span></p>
+          </li>
+          <li class="reviews__item">
+            <p class="reviews__text">«Коронка по гарантии: через год скол, поменяли без разговоров и без денег. Договор с гарантией лежит дома, на него и ссылался»</p>
+            <p class="reviews__meta"><b>Сергей</b> · ноябрь 2025 · <span class="reviews__stars reviews__stars--sm" style="--r: 5" role="img" aria-label="оценка 5 из 5"></span></p>
+          </li>
+        </ul>
+        <p class="reviews__fact" data-v-in data-v-in-self>Отзывы демонстрационные, придуманы для макета. На боевом сайте здесь только настоящие, скопированные с карточки клиники на Яндекс.Картах.</p>
+      </div>
+    </section>
+
+    <!-- 6 · ДЕЙСТВИЕ: запись, контакты, футер -->
+    <section data-v-act="pin" data-v-span="1.45" data-v-drift="#121317" id="zapis" aria-label="Запись на приём">
+      <div data-v-stage>
+        <div class="v-layer close__back" data-v-parallax="-0.28">
+          <img src="assets/final.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+        </div>
+        <div class="close__veil" aria-hidden="true"></div>
+
+        <div class="close">
+          <div class="close__inner">
+            <div class="close__copy" data-v-cue="0.03" data-v-rise="24">
+              <span class="v-label">Запись</span>
+              <h2 class="v-display v-display--xl">Приходите за планом, а не за «полечим потом»</h2>
+              <p>На первом приёме смотрим, снимаем и собираем план со сметой на год. Дальше решаете вы: начать сразу, взять паузу или уйти думать с планом на руках.</p>
+              <div class="close__meta">
+                <a class="close__tel" href="tel:+78126401240">+7 (812) 640-12-40</a>
+                <span><b>набережная реки Фонтанки, 74</b>, Санкт-Петербург</span>
+                <span>Пн–Сб 9:00–21:00, Вс 10:00–18:00, приём по записи</span>
+                <span>Лицензия ЛО-78-01-009812</span>
+              </div>
+            </div>
+
+            <form class="form" id="zapis-form" novalidate data-v-cue="0.06" data-v-rise="24">
+              <span class="v-label">Записаться на осмотр</span>
+              <div class="form__fields">
+                <label>Как вас зовут
+                  <input type="text" name="name" id="f-name" autocomplete="name" placeholder="Имя" required>
+                </label>
+                <label>Телефон
+                  <input type="tel" name="phone" id="f-phone" autocomplete="tel" inputmode="tel" placeholder="+7 ___ ___-__-__" required>
+                </label>
+                <label>Что планируете
+                  <select name="service" id="f-service">
+                    <option value="osmotr">Осмотр и план лечения</option>
+                    <option value="gigiena">Гигиена</option>
+                    <option value="lechenie">Лечение зуба</option>
+                    <option value="protetika">Коронка или имплант</option>
+                    <option value="orto">Брекеты или элайнеры</option>
+                    <option value="deti">Ребёнок</option>
+                  </select>
+                </label>
+                <p class="form__err" id="f-err" role="alert"></p>
+                <button class="v-btn" type="submit">Записаться</button>
+                <span class="form__note">Форма демонстрационная: заявка никуда не уходит. На боевом сайте она уходит в мессенджер клиники.</span>
+              </div>
+              <div class="form__ok" aria-live="polite">
+                <b>Спасибо, записали</b>
+                <p class="v-soft">Перезвоним в течение часа в часы приёма и подберём время. Это демо: заявка не отправлена.</p>
+              </div>
+            </form>
+          </div>
+
+          <footer class="foot">
+            <span>Фонтанка · стоматология · Санкт-Петербург</span>
+            <span>Лицензия ЛО-78-01-009812</span>
+            <span class="foot__warn">Имеются противопоказания. Необходима консультация специалиста.</span>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="vibe.js"></script>
+<script>
+  // На телефоне пин первого экрана короче, а блок записи перестаёт быть закреплённым:
+  // его содержимое выше экрана, и в закреплённой сцене форма срезалась.
+  if (window.matchMedia('(max-width: 860px)').matches) {
+    document.getElementById('top').setAttribute('data-v-span', '1.8');
+    var zap = document.getElementById('zapis');
+    zap.setAttribute('data-v-act', 'flow');
+    zap.removeAttribute('data-v-span');
+  }
+  Vibe.mount(document.querySelector('.v-page'));
+
+  // Шапка: подложка после 40 px прокрутки.
+  (function () {
+    var bar = document.querySelector('.bar'), on = null;
+    function tick() { var s = window.scrollY > 40; if (s !== on) { on = s; bar.classList.toggle('is-scrolled', s); } }
+    window.addEventListener('scroll', tick, { passive: true }); tick();
+  })();
+
+  // Врачи: клик или Enter/пробел по карточке показывает фото этого врача.
+  (function () {
+    var who = document.getElementById('who'); if (!who) return;
+    var cards = Array.prototype.slice.call(who.querySelectorAll('.doc[data-doc]'));
+    var fig = who.querySelector('.who__fig');
+    function pick(card) {
+      who.setAttribute('data-doc', card.getAttribute('data-doc'));
+      cards.forEach(function (c) {
+        var on = c === card;
+        c.classList.toggle('is-on', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    function show() {
+      if (!fig || !window.matchMedia('(max-width: 860px)').matches) return;
+      var r = fig.getBoundingClientRect();
+      if (r.top < 70 || r.bottom > window.innerHeight) fig.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    cards.forEach(function (c) {
+      c.addEventListener('click', function () { pick(c); show(); });
+      c.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(c); }
+      });
+    });
+  })();
+
+  // Фирменный ход: смета на год. Складываем цены, визиты и сроки выбранных услуг.
+  (function () {
+    var list = document.getElementById('calc-list'); if (!list) return;
+    var TOTAL = document.getElementById('calc-total');
+    var COUNT = document.getElementById('calc-count');
+    var WEEKS = document.getElementById('calc-weeks');
+    var VISITS = document.getElementById('calc-visits');
+    var services = {
+      gigiena: { price: 6900, visits: 1, weeks: 1 },
+      karies: { price: 7900, visits: 1, weeks: 1 },
+      kanaly: { price: 13500, visits: 2, weeks: 2 },
+      koronka: { price: 26000, visits: 3, weeks: 4 },
+      implant: { price: 46000, visits: 4, weeks: 16 },
+      orto: { price: 165000, visits: 8, weeks: 52 },
+      deti: { price: 3900, visits: 1, weeks: 1 }
+    };
+    var base = { price: 1900, visits: 1, weeks: 1 };
+
+    function plural(n, one, few, many) {
+      var a = Math.abs(n) % 100, b = a % 10;
+      if (a > 10 && a < 20) return many;
+      if (b > 1 && b < 5) return few;
+      if (b === 1) return one;
+      return many;
+    }
+    function money(n) {
+      return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0') + '\u00a0₽';
+    }
+    function recalc() {
+      var sum = base.price, visits = base.visits, weeks = base.weeks, count = 0, maxWeeks = base.weeks;
+      list.querySelectorAll('input[data-id]').forEach(function (inp) {
+        if (!inp.checked) return;
+        var s = services[inp.getAttribute('data-id')];
+        if (!s) return;
+        count++;
+        sum += s.price;
+        visits += s.visits;
+        maxWeeks = Math.max(maxWeeks, s.weeks);
+        weeks += s.weeks;
+      });
+      // сроки: самый длинный этап плюс по полнедели на каждую остальную услугу
+      var totalWeeks = count ? maxWeeks + Math.ceil(count * 0.5) : 3;
+      TOTAL.textContent = money(sum);
+      COUNT.textContent = count === 0
+        ? 'только осмотр'
+        : count + ' ' + plural(count, 'услуга', 'услуги', 'услуг');
+      VISITS.textContent = visits + ' ' + plural(visits, 'визит', 'визита', 'визитов');
+      WEEKS.textContent = totalWeeks > 52
+        ? 'больше года'
+        : totalWeeks + ' ' + plural(totalWeeks, 'недели', 'недели', 'недель');
+    }
+    list.addEventListener('change', recalc);
+    recalc();
+  })();
+
+  // Форма записи: проверка на месте, без отправки (демо).
+  (function () {
+    var form = document.getElementById('zapis-form'); if (!form) return;
+    var name = document.getElementById('f-name');
+    var phone = document.getElementById('f-phone');
+    var err = document.getElementById('f-err');
+    function digits(s) { return (s.match(/\d/g) || []).length; }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.textContent = '';
+      name.removeAttribute('aria-invalid');
+      phone.removeAttribute('aria-invalid');
+      if (name.value.trim().length < 2) {
+        name.setAttribute('aria-invalid', 'true');
+        err.textContent = 'Напишите имя, чтобы мы знали, как к вам обращаться.';
+        name.focus();
+        return;
+      }
+      if (digits(phone.value) < 10) {
+        phone.setAttribute('aria-invalid', 'true');
+        err.textContent = 'Номер телефона короче 10 цифр. Проверьте, пожалуйста.';
+        phone.focus();
+        return;
+      }
+      form.classList.add('is-done');
+    });
+    [name, phone].forEach(function (el) {
+      el.addEventListener('input', function () { el.removeAttribute('aria-invalid'); err.textContent = ''; });
+    });
+  })();
+</script>
+</body>
+</html>
