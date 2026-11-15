@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -19,7 +19,7 @@
 <link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 861px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%274%27 width=%2724%27 height=%2724%27 fill=%27none%27 stroke=%27%23c2a06a%27 stroke-width=%275%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="vibe.css">
 <script type="application/ld+json">
@@ -32,9 +32,9 @@
     --v-ink: #efe8dc; --v-ink-soft: #a79e91;
     --v-accent: #c2a06a; --v-accent-ink: #17140f;
     --v-accent-deep: #d9bd8c;
-    --v-font-display: "Prata", "Times New Roman", serif;
+    --v-font-display: "Onest", "Segoe UI", system-ui, sans-serif;
     --v-font-text: "Golos Text", "Segoe UI", system-ui, sans-serif;
-    --v-display-weight: 400;
+    --v-display-weight: 500;
     --v-track-tight: -0.01em;
     --v-shadow-color: 0 0 0;
     --v-e1: 0 1px 2px rgb(0 0 0 / .3), 0 10px 26px rgb(0 0 0 / .35);
@@ -46,7 +46,7 @@
     --v-warn: #e9a08d;
   }
   html, body { margin: 0; background: #14151a; }
-  .v-page .v-display { font-weight: 400; letter-spacing: -0.012em; line-height: 1.04; }
+  .v-page .v-display { font-weight: var(--v-display-weight); letter-spacing: -0.018em; line-height: 1.04; }
   .v-page .v-lede { max-width: 46ch; }
   .v-page .v-label { font-weight: 500; letter-spacing: .16em; font-size: 0.7rem; }
   .nm { white-space: nowrap; }
@@ -80,30 +80,31 @@
   .hero__back img { position: absolute; max-width: none; width: 112%; height: 112%; left: -6%; top: -6%; object-fit: cover; object-position: 64% 50%; }
   .hero__veil { position: absolute; inset: 0; z-index: 2; pointer-events: none;
     background:
-      radial-gradient(72% 62% at 50% 44%, rgb(8 9 12 / .62) 0%, rgb(8 9 12 / .26) 56%, transparent 80%),
-      linear-gradient(to bottom, rgb(8 9 12 / .72) 0%, rgb(8 9 12 / .1) 26%, rgb(8 9 12 / .12) 52%, rgb(8 9 12 / .9) 100%); }
-  .hero__copy { inset: 0; max-width: none; display: grid; grid-template-columns: 100%; align-content: center; justify-items: center; text-align: center;
-    padding: clamp(5.5rem, 12vh, 8rem) var(--v-gutter) clamp(3rem, 8vh, 5rem); }
+      linear-gradient(to right, rgb(8 9 12 / .88) 0%, rgb(8 9 12 / .7) 30%, rgb(8 9 12 / .26) 58%, transparent 76%),
+      linear-gradient(to bottom, rgb(8 9 12 / .5) 0%, transparent 20%, transparent 76%, rgb(8 9 12 / .62) 100%); }
+  .hero__copy { left: var(--v-gutter); right: auto; top: auto; bottom: clamp(3rem, 8vh, 5.5rem);
+    max-width: min(42rem, 82vw); display: grid; grid-template-columns: 100%; text-align: left; }
   /* две реплики в одном кадре: первая держится, вторая входит с 0.58 и уводит в услуги */
-  .hero__panel { grid-area: 1 / 1; }
+  .hero__panel { grid-area: 1 / 1; align-self: end; }
   .hero__label { display: block; margin-bottom: var(--v-5); color: var(--v-accent-deep); }
-  .hero h1 { font-size: clamp(2.4rem, 1.3rem + 3.9vw, 4.8rem); max-width: 21ch; }
-  .hero__lede { margin-top: var(--v-5); font-size: clamp(1rem, 0.94rem + 0.35vw, 1.22rem); line-height: 1.5; color: var(--v-ink); max-width: 52ch; }
-  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--v-4) var(--v-6); margin-top: var(--v-6); }
+  .hero h1 { font-size: clamp(1.65rem, 1rem + 1.9vw, 2.7rem); line-height: 1.12; max-width: 26ch; letter-spacing: -0.022em; }
+  .hero__lede { margin-top: var(--v-5); font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.12rem); line-height: 1.5; color: var(--v-ink); max-width: 44ch; }
+  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: var(--v-3) var(--v-5); margin-top: var(--v-5); }
   .hero__tel { text-decoration: none; color: var(--v-ink); font-size: var(--v-t-sm); display: inline-flex; align-items: center; min-height: 44px; gap: .4em; }
   .hero__tel b { font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
-  .hero__facts { margin-top: clamp(1.6rem, 4vh, 2.6rem); width: min(100%, 52rem); padding-top: var(--v-5); border-top: 1px solid rgb(239 232 220 / .16);
-    display: flex; flex-wrap: wrap; justify-content: center; gap: var(--v-3) var(--v-7); }
+  .hero__facts { margin-top: var(--v-5); padding-top: var(--v-4); border-top: 1px solid rgb(239 232 220 / .16);
+    display: flex; flex-direction: column; gap: .35rem; }
   .hero__facts li { display: flex; align-items: baseline; gap: .55em; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
   .hero__facts li b { color: var(--v-ink); font-weight: 500; }
   .hero__facts li::before { content: ""; width: .38em; height: .38em; border-radius: 50%; background: var(--v-accent); transform: translateY(-.15em); flex: none; }
-  .hero__panel--2 h2 { font-size: clamp(1.7rem, 1.1rem + 2.2vw, 3rem); max-width: 24ch; }
+  .hero__panel--2 h2 { font-size: clamp(1.35rem, 1rem + 1.3vw, 2rem); line-height: 1.16; max-width: 26ch; }
   .hero__panel--2 .hero__lede { max-width: 42ch; }
   .hero__panel--2 .hero__sign { display: block; margin-top: var(--v-5); font-size: var(--v-t-sm); color: var(--v-accent-deep); letter-spacing: .04em; }
   @media (max-width: 860px) {
     .hero__back img { object-position: 62% 82%; }
-    .hero__copy { align-content: start; padding-top: clamp(5.5rem, 13vh, 7rem); }
-    .hero h1 { font-size: clamp(1.85rem, 1.15rem + 3.2vw, 2.5rem); max-width: 24ch; }
+    .hero__copy { left: var(--v-gutter); right: var(--v-gutter); top: clamp(5rem, 12vh, 6.5rem); bottom: auto; max-width: none; }
+    .hero__panel { align-self: start; }
+    .hero h1 { font-size: clamp(1.6rem, 1.05rem + 2.4vw, 2.2rem); max-width: none; }
     .hero__lede { font-size: var(--v-t-base); margin-top: var(--v-3); }
     .hero__cta { margin-top: var(--v-4); gap: var(--v-2) var(--v-4); }
     .hero__facts { flex-direction: column; align-items: flex-start; gap: var(--v-1); margin-top: var(--v-4); padding-top: var(--v-4); text-align: left; }
@@ -194,14 +195,14 @@
   .doc[role="button"]:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 3px; }
   @media (hover: hover) { .doc[role="button"]:not(.is-on):hover { opacity: 1; } }
   .docs__hint { font-size: var(--v-t-xs); letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-ink-soft); }
-  .doc b { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); line-height: 1.1; }
+  .doc b { font-family: var(--v-font-display); font-weight: 500; font-size: var(--v-t-xl); line-height: 1.1; }
   .doc .spec { color: var(--v-ink); font-size: var(--v-t-sm); }
   .doc .says { margin-top: var(--v-2); padding-top: var(--v-3); border-top: 1px solid var(--v-hair); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 44ch; text-wrap: pretty; }
   .clean { margin-top: var(--v-8); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--v-8) var(--v-9); align-items: center; }
   .clean__fig { position: relative; aspect-ratio: 16 / 10; border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); background: var(--v-surface); margin: 0; }
   .clean__fig img { width: 100%; height: 100%; object-fit: cover; }
   .clean__fig figcaption { position: absolute; left: var(--v-5); top: var(--v-5); right: 45%; font-size: var(--v-t-sm); color: var(--v-ink); text-shadow: 0 1px 8px rgb(0 0 0 / .85); }
-  .clean__copy h3 { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); line-height: 1.12; margin-bottom: var(--v-5); }
+  .clean__copy h3 { font-family: var(--v-font-display); font-weight: 500; font-size: var(--v-t-xl); line-height: 1.12; margin-bottom: var(--v-5); }
   .facts li { padding: var(--v-4) 0; border-top: 1px solid var(--v-hair); display: grid; gap: var(--v-1); }
   .facts li:last-child { border-bottom: 1px solid var(--v-hair); }
   .facts b { font-weight: 500; }
@@ -260,7 +261,7 @@
   .form .v-btn { justify-content: center; margin-top: var(--v-2); width: 100%; }
   .form__note { font-size: var(--v-t-xs); color: var(--v-ink-soft); }
   .form__ok { display: none; gap: var(--v-3); }
-  .form__ok b { font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-lg); }
+  .form__ok b { font-family: var(--v-font-display); font-weight: 500; font-size: var(--v-t-lg); }
   .form.is-done .form__fields, .form.is-done .form__err, .form.is-done .form__note, .form.is-done > .v-btn { display: none; }
   .form.is-done .form__ok { display: grid; }
   .foot { display: grid; grid-template-columns: auto 1fr auto; gap: var(--v-3) var(--v-6); align-items: baseline; margin: 0 calc(-1 * var(--v-gutter)); padding: var(--v-6) var(--v-gutter);
@@ -309,7 +310,7 @@
   <main>
 
     <!-- 1 · УЗНАВАНИЕ: тёмный кадр, оффер по центру, полоса фактов -->
-    <section id="top" data-v-act="pin" data-v-span="2.4" data-v-drift="#14151a" aria-label="Стоматология «Фонтанка»">
+    <section id="top" class="hero" data-v-act="pin" data-v-span="2.4" data-v-drift="#14151a" aria-label="Стоматология «Фонтанка»">
       <div data-v-stage>
         <div class="v-layer hero__back" data-v-parallax="-0.4">
           <picture>
